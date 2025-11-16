@@ -1,32 +1,14 @@
-name: Python Tests
+name: CI on Puzl
 
 on:
   push:
-    branches: ['*']
-  pull_request:
-    branches: ['*']
+    branches:
+      - main
 
 jobs:
-  test:
-    runs-on: puzl-ubuntu-latest
-
+  show-cpu:
+    runs-on: puzl-ubuntu-latest    # label runner Puzl dari dokumentasi
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
-        with:
-          python-version: '3.11'
-
-      - name: Cache pip dependencies
-        uses: puzl-cloud/github-actions-cache@v3
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-
-      - name: Install dependencies
-        run: |
-          lscpu
+      - uses: actions/checkout@v4
+      - name: Show CPU Info
+        run: lscpu
