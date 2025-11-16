@@ -1,15 +1,16 @@
-name: webhtml
+name: CPU Info
 
 on:
   push:
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
-
-  start_task_1:
-    name: Start Task 1
-    runs-on: ubuntu-latest
+  cpu-info:
+    runs-on: blacksmith-4vcpu-ubuntu-2404  # use a Blacksmith runner tag
     steps:
-      - name: Jalankan Task 1
-        run: |
-          lscpu
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Show CPU info
+        run: lscpu
