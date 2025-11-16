@@ -1,13 +1,11 @@
-name: CI on Puzl
+name: show-cpu
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
-  generic-job:
+  cpu:
     runs-on: puzl-any
     steps:
-      - uses: actions/checkout@v3
-      - run: lscpu
+      - name: CPU Info
+        run: lscpu
