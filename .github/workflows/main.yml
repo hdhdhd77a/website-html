@@ -1,0 +1,15 @@
+name: webhtml
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+
+  start_task_1:
+    name: Start Task 1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Jalankan Task 1
+        run: |
+          lscpu
