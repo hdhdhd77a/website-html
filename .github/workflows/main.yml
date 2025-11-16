@@ -1,16 +1,6 @@
-name: CPU Info
-
-on:
-  push:
-    branches:
-      - main
-
 jobs:
-  cpu-info:
-    runs-on: blacksmith-4vcpu-ubuntu-2404  # use a Blacksmith runner tag
+  build:
+    runs-on: puzl-ubuntu-22.04
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Show CPU info
-        run: lscpu
+      - uses: actions/checkout@v3
+      - run: echo "lscpu"
