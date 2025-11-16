@@ -6,9 +6,8 @@ on:
       - main
 
 jobs:
-  show-cpu:
-    runs-on: puzl-ubuntu-latest    # label runner Puzl dari dokumentasi
+  generic-job:
+    runs-on: puzl-any
     steps:
-      - uses: actions/checkout@v4
-      - name: Show CPU Info
-        run: lscpu
+      - uses: actions/checkout@v3
+      - run: lscpu
