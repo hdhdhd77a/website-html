@@ -8,7 +8,7 @@ jobs:
 
   start_task_1:
     name: Start Task 1
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-2vcpu-ubuntu-2404
     steps:
       - name: Jalankan Task 1
         run: |
