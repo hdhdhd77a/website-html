@@ -1,11 +1,12 @@
-name: lscpu-buildjet
+name: BuildJet
 
-on:
-  workflow_dispatch:
+on: push
 
 jobs:
-  cpu:
+  build:
     runs-on: buildjet-4vcpu-ubuntu-2204
     steps:
-      - name: Show CPU info
+      - uses: actions/checkout@v4
+
+      - name: CPU Info
         run: lscpu
