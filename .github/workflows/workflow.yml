@@ -1,0 +1,11 @@
+name: lscpu-buildjet
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cpu:
+    runs-on: buildjet-4vcpu-ubuntu-2204
+    steps:
+      - name: Show CPU info
+        run: lscpu
