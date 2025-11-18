@@ -1,11 +1,13 @@
-name: show-cpu
+name: Test Puzl
 
-on:
-  workflow_dispatch:
+on: push
 
 jobs:
-  cpu:
+  build:
     runs-on: puzl-any
+
     steps:
-      - name: CPU Info
+      - uses: actions/checkout@v4
+
+      - name: Print CPU Info
         run: lscpu
