@@ -5,7 +5,7 @@ on:
 
 jobs:
   check-cpu:
-    runs-on: carbonrunner-16vcpu-ubuntu-latest
+    runs-on: carbonrunner-32vcpu-ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
