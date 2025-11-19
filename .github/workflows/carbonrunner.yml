@@ -1,0 +1,16 @@
+name: CarbonRunner Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  check-cpu:
+    runs-on: carbonrunner-2vcpu-ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show CPU Info
+        run: lscpu
