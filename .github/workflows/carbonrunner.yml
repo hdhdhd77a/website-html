@@ -1,13 +1,11 @@
 name: CarbonRunner Test
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
+  workflow_dispatch:
 
 jobs:
   check-cpu:
-    runs-on: carbonrunner-8vcpu-ubuntu-2404
+    runs-on: carbonrunner-16vcpu-ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
